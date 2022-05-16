@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import {
+  ApolloClient,
+  ApolloProvider,
+  createHttpLink
+} from '@apollo/client';
 
 ReactDOM.render(
   <React.StrictMode>
