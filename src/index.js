@@ -6,13 +6,23 @@ import * as serviceWorker from './serviceWorker';
 import {
   ApolloClient,
   ApolloProvider,
-  createHttpLink
+  createHttpLink,
+  InMemoryCache
 } from '@apollo/client';
 
+const httpLink = createHttpLink({
+  uri: 'https://countries.trevorblades.com/'
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache()
+});
+
 ReactDOM.render(
-  <React.StrictMode>
+  <ApolloProvider client={client}>
     <App />
-  </React.StrictMode>,
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
