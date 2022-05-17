@@ -1,27 +1,27 @@
 import React from "react";
 import Country from "./Country";
+import { useQuery, gql } from "@apollo/client";
+
+const COUNTRIES_QUERY = gql`
+    {
+        countries {
+            name
+        }
+    }
+`;
 
 const CountriesList = () => {
-    const countriesToRender = [
-        {
-            "name": "Andorra"
-        },
-        {
-            "name": "United Arab Emirates"
-        },
-        {
-            "name": "Afghanistan"
-        },
-        {
-            "name": "Antigua and Barbuda"
-        }
-    ];
+    const { data } = useQuery(COUNTRIES_QUERY);
 
     return (
         <div>
-            {countriesToRender.map((country, index) => (
-                < Country key={index} country={country} />
-            ))}
+            {data && (
+                <>
+                    {data.countries.map((country, index) => (
+                        < Country key={index} country={country} />
+                    ))}
+                </>
+            )}
         </div>
     );
 };
