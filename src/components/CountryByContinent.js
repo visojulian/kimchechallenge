@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import React from 'react';
-import SortedByContinent from './SortedByContinent';
+import SortByContinent from './SortByContinent';
 
 const CONTINENTS = gql`
   query allContinents {
@@ -15,15 +15,13 @@ const CONTINENTS = gql`
 
 const CountryByContinent = (props) => {
     const { data } = useQuery(CONTINENTS);
+
     return (
         <>
             {data && (
                 <div>
                     {data.continents.map((continent, index) => <div key={index}>
-                        <h3>
-                            {continent.name}
-                        </h3>
-                        <SortedByContinent code={continent.code} filter={props.filter} />
+                        <SortByContinent code={continent.code} filter={props.filter} name={continent.name} />
                     </div>)}
                 </div>
             )}

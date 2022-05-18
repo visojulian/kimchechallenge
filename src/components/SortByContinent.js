@@ -1,15 +1,18 @@
 import React from "react";
-import Country from "./Country";
 import { gql, useQuery } from "@apollo/client";
 import filterCountry from "../utils/filterCountry";
+import { ContinentName } from "./ContinentName";
+import Country from "./Country";
+
+var _ = require('lodash')
 
 const COUNTRIES_QUERY = gql`
-    query SortedByContinent($filter: CountryFilterInput){
+    query SortByContinent($filter: CountryFilterInput){
         countries (filter: $filter){
             name
             code
             capital
-            emojiU
+            emoji
             languages {
                 name
             }
@@ -17,7 +20,7 @@ const COUNTRIES_QUERY = gql`
     }
 `;
 
-const SortedByContinent = (props) => {
+const SortByContinent = (props) => {
 
     const { data } = useQuery(COUNTRIES_QUERY,
         {
@@ -31,14 +34,17 @@ const SortedByContinent = (props) => {
         }
     );
     const filter = props.filter;
+    let filtered;
+    if (data) { filtered = filterCountry(data.countries, filter) }
     return (
         <div>
-
-            {data && (
+            {data && !_.isEmpty(filtered) && (
                 <>
-                    {filterCountry(data.countries, filter).map((country, index) => (
-                        < Country key={index} country={country} />
-                    ))}
+                    <ContinentName name={props.name} />
+                    {
+                        filtered.map((country, index) => (
+                            < Country key={index} country={country} />))
+                    }
                 </>
             )}
 
@@ -46,4 +52,4 @@ const SortedByContinent = (props) => {
     );
 };
 
-export default SortedByContinent;
+export default SortByContinent;
