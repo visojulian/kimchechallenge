@@ -3,6 +3,7 @@ import { Card, CardContent } from '@mui/material';
 
 const Country = (props) => {
     const { country } = props;
+
     return (
         <Card>
             <CardContent>
