@@ -1,6 +1,7 @@
 import React from "react";
 import Country from "./Country";
 import { gql, useQuery } from "@apollo/client";
+import filterCountry from "../utils/filterCountry";
 
 const COUNTRIES_QUERY = gql`
     query SortedByContinent($filter: CountryFilterInput){
@@ -29,13 +30,13 @@ const SortedByContinent = (props) => {
             }
         }
     );
-
+    const filter = props.filter;
     return (
         <div>
 
             {data && (
                 <>
-                    {data.countries.map((country, index) => (
+                    {filterCountry(data.countries, filter).map((country, index) => (
                         < Country key={index} country={country} />
                     ))}
                 </>

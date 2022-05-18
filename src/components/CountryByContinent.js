@@ -13,7 +13,7 @@ const CONTINENTS = gql`
 `;
 
 
-const CountryByContinent = () => {
+const CountryByContinent = (props) => {
     const { data } = useQuery(CONTINENTS);
     return (
         <>
@@ -23,7 +23,7 @@ const CountryByContinent = () => {
                         <h3>
                             {continent.name}
                         </h3>
-                        <SortedByContinent code={continent.code} />
+                        <SortedByContinent code={continent.code} filter={props.filter} />
                     </div>)}
                 </div>
             )}

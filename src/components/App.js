@@ -1,20 +1,26 @@
-import React, { Component } from 'react';
+import { TextField } from '@mui/material';
+import React, { useState } from 'react';
 import './../styles/App.css'
 import CountryByContinent from './CountryByContinent';
 
 
 
 
-class App extends Component {
-  render() {
+const App = () => {
+  const [searchFilter, setSearchFilter] = useState('');
 
-    return (
-      <>
+  return (
+    <>
+      <div>
+        <TextField id='searchFilter' variant='filled' label='Search...'
+          onChange={
+            (e) => { setSearchFilter(e.target.value) }
+          } />
+      </div>
+      <CountryByContinent filter={searchFilter} />
+    </>
+  );
 
-        <CountryByContinent />
-      </>
-    );
-  }
 }
 
 export default App;
