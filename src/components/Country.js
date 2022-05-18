@@ -5,7 +5,10 @@ const Country = (props) => {
     const { country } = props;
     return (
         <Card>
-            <CardContent>{country.name}</CardContent>
+            <CardContent>
+                <div>{country.name}</div>
+                <div>{country.code}</div>
+            </CardContent>
         </Card>
     )
 };
