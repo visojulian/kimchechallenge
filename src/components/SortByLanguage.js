@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React from "react";
 import filterCountry from "../utils/filterCountry";
 import Country from "./Country";
@@ -14,15 +15,16 @@ const SortByLanguage = (props) => {
         <div>
             {!_.isEmpty(filtered) && (
                 <>
-                    <h3>{language.name}</h3>
+                    <Typography ml={2} mt={5} variant="h6">{language.name}</Typography>
                     {
                         filtered.map((country, index) => (
                             < Country key={index} country={country} />))
                     }
                 </>
-            )}
+            )
+            }
 
-        </div>
+        </div >
     );
 };
 
