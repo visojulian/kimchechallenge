@@ -12,7 +12,7 @@ const COUNTRIES_QUERY = gql`
             name
             code
             capital
-            emoji
+            emojiU
             languages {
                 name
             }

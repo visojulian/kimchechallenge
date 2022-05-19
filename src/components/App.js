@@ -1,4 +1,4 @@
-import { TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import './../styles/App.css'
 import CountryByContinent from './CountryByContinent';
@@ -7,8 +7,9 @@ import CountryByContinent from './CountryByContinent';
 
 
 const App = () => {
-  const [searchFilter, setSearchFilter] = useState('');
 
+  const [order, setOrder] = useState(true);
+  const [searchFilter, setSearchFilter] = useState('');
 
   return (
     <>
@@ -18,7 +19,11 @@ const App = () => {
             (e) => { setSearchFilter(e.target.value) }
           } />
       </div>
-      <CountryByContinent filter={searchFilter} />
+      <div>
+        <Button variant='primary' onClick={() => { setOrder(true) }}>CONTINENT</Button>
+        <Button variant='primary' onClick={() => { setOrder(false) }}>LANGUAGE</Button>
+      </div>
+      {order && (<CountryByContinent filter={searchFilter} />)}
     </>
   );
 
