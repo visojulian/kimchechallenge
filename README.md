@@ -1,39 +1,26 @@
-# Desafío para Software Engineers
+# Hola! 👋
+Esta es mi resolución para el
+### Desafío para Software Engineers
 
-Nombre postulante: [TU NOMBRE]
-Link a la app en producción: [LINK DEL DEPLOY]
-
-## Instrucciones
-
-Debes crear un buscador de países consultando el [siguiente grafo](https://countries.trevorblades.com/). Este código contiene una base para seguir con la aplicación en React y ApolloClient. Queda a disposición tuya cualquier cambio, ya sea de estructura, estilo, etc.
-
-Se espera que logres hacer una aplicación parecida a la del siguiente diagrama:
-
-![image1](imgs/1.png)
-![image2](imgs/2.png)
-
-La funcionalidad y estructura debe ser igual, pero el diseño y variantes (por ejemplo, cambiar colores de las cosas) queda a tu gusto. **Considerar que el ícono al lado del nombre de cada país es el emoji**.
-
-Además de esto, se espera que hagas deploy de tu app en el servicio que desees (Heroku, Netlify, AWS, Github Pages, etc).
+Nombre postulante: [Julian Viso](https://www.linkedin.com/in/julian-viso/)
+Link a la app en producción: [AQUI](https://bocha96.github.io)
 
 ## Consideraciones
+Antes de empezar, dejo aquí unas breves consideraciones.
+En esta aplicación se establecen dos caminos distintos para realizar peticiones a la API.
+Uno es el camino de [CONTINENTES](src/components/CountryByContinent.js) y el otro es el camino de [IDIOMAS](src/components/CountryByLanguage.js).
+Esto se debe a mi decisión de implementar la funcionalidad de filtros por continentes que ofrece la API, la cual me pareció más apropiada para resolver consultas ordenadas por continentes, pero esta resolución no era posible a través del camino de idiomas. Por lo cual preferí establecer dos lines de trabajo distintas dentro de la misma aplicación, sólo con propósitos de estudio.
+Quizás esta resolución no sea óptima, pero deja cuenta del manejo de graphql en un nivel básico.
 
-- Se espera que uses buenas prácticas como gitflow (pull requests y commits), orden del código, estructura, eficiencia, etc.
-- Puedes dejar comentarios de decisiones que tuviste que tomar y del por qué en este repositorio.
-- Se va a considerar un buen diseño de UX/UI.
+## Paquetes
+Para el desarrollo de esta aplicación se utilizaron los siguientes paquetes:
 
-## Hints
-
-Acá van algunas cosas que pueden ser útiles (o no 👀):
-
-- [Gitignore](https://www.toptal.com/developers/gitignore)
-- [GraphQL](https://www.howtographql.com/)
 - [React](https://es.reactjs.org/)
-- [Styled components](https://styled-components.com/docs/basics)
+- [Material UI](https://mui.com/)
 - [ApolloClient](https://www.apollographql.com/docs/react/)
 - [Lodash](https://lodash.com/)
-- [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
-- [Commitlint](https://commitlint.js.org/#/)
-- [Eslint](https://eslint.org/)
-- [Eslint airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
-- [Husky](https://www.npmjs.com/package/husky)
+
+## Comentarios finales
+- Utilizar Material UI fue una decisión de tiempos. No trabajé lo suficiente con styled-components como para resvolver el challenge en un tiempo considerable.
+- Intenté llevar a cabo este challenge mantiendo las buenas prácticas como gitflow y conventional commits.
+- Por último, agradecer la oportunidad de resolver este desafío. Me permitió trabajar de manera intensa sobre una tecnología que aún no conocía. Espero que puedan tenerme en consideración. Saludos
