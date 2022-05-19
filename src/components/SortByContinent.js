@@ -1,7 +1,6 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import filterCountry from "../utils/filterCountry";
-import { ContinentName } from "./ContinentName";
 import Country from "./Country";
 
 var _ = require('lodash')
@@ -13,6 +12,12 @@ const COUNTRIES_QUERY = gql`
             code
             capital
             emoji
+            native
+            phone
+            currency
+            states{
+                name
+                }
             languages {
                 name
             }
@@ -40,7 +45,7 @@ const SortByContinent = (props) => {
         <div>
             {data && !_.isEmpty(filtered) && (
                 <>
-                    <ContinentName name={props.name} />
+                    <h3>{props.name}</h3>
                     {
                         filtered.map((country, index) => (
                             < Country key={index} country={country} />))
