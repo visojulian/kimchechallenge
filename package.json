@@ -2,6 +2,7 @@
   "name": "kimchechallenge",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bocha96.github.io",
   "dependencies": {
     "@apollo/client": "^3.6.2",
     "@apollo/react-hooks": "^3.1.5",
@@ -23,7 +24,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,6 +53,7 @@
     "commitlint": "^17.0.0",
     "eslint": "^8.15.0",
     "eslint-plugin-react": "^7.29.4",
+    "gh-pages": "^4.0.0",
     "husky": "^8.0.1"
   }
 }
