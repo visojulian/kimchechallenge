@@ -7,7 +7,6 @@ import { Box, Card, CardContent, Divider, Typography } from '@mui/material';
 const Country = (props) => {
     const { country } = props;
 
-
     return (
         <Card variant="outlined" sx={{ display: "inline-block", width: 380, height: 200, margin: 2 }} >
             <Box ml={2} mt={2} mb={0}>

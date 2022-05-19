@@ -2,6 +2,7 @@ import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import filterCountry from "../utils/filterCountry";
 import Country from "./Country";
+import { Typography } from "@mui/material";
 
 var _ = require('lodash')
 
@@ -45,7 +46,7 @@ const SortByContinent = (props) => {
         <div>
             {data && !_.isEmpty(filtered) && (
                 <>
-                    <h3>{props.name}</h3>
+                    <Typography ml={2} mt={5} variant="h6">{props.name}</Typography>
                     {
                         filtered.map((country, index) => (
                             < Country key={index} country={country} />))
