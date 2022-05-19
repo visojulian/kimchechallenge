@@ -3,7 +3,7 @@ Esta es mi resolución para el
 ### Desafío para Software Engineers
 
 Nombre postulante: [Julian Viso](https://www.linkedin.com/in/julian-viso/)
-Link a la app en producción: [AQUI](https://bocha96.github.io)
+Link a la app en producción: [AQUI](https://bocha96.github.io/kimchechallenge/index.html)
 
 ## Consideraciones
 Antes de empezar, dejo aquí unas breves consideraciones.
